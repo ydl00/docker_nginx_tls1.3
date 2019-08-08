@@ -10,9 +10,9 @@ Nginx 1.15.6 + OpenSSL 1.1.1 (支持 TLSv1.3)
     -v ~/nginx/conf/nginx.conf:${nginx_path}/conf/nginx.conf \
     -v ~/nginx/conf/cert:${nginx_path}/conf/cert  \
     -v ~/nginx/logs/:${nginx_path}/logs \
-    -d ydl/nginx:TLS1.3
+    -d yindl/nginx_tls1.3
 
 
 # 编译镜像
-    docker build -t ydl/nginx:TLS1.3 .
+    docker build -t yindl/nginx_tls1.3 .
 

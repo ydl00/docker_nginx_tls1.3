@@ -12,7 +12,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends libpcre3-dev make build-essential curl zlib1g-dev ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp \
-    && curl http://nginx.org/download/nginx-1.15.6.tar.gz -o nginx.tar.gz \
+    && curl http://nginx.org/download/nginx-1.17.2.tar.gz -o nginx.tar.gz \
     && mkdir nginx && tar -xzv -C nginx --strip-components=1 -f nginx.tar.gz \
     && curl https://www.openssl.org/source/openssl-1.1.1.tar.gz -o openssl.tar.gz \
     && mkdir openssl && tar -xzv -C openssl --strip-components=1 -f openssl.tar.gz \
