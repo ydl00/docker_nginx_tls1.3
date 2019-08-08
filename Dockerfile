@@ -1,4 +1,13 @@
 FROM ubuntu:18.04
+
+# 使用 上海 时区
+RUN rm -f /etc/localtime \
+&& ln -sv /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+&& echo "Asia/Shanghai" > /etc/timezone
+
+# 使用中文语言
+ENV LANG C.UTF-8
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends libpcre3-dev make build-essential curl zlib1g-dev ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
