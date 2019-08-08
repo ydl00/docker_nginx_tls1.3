@@ -1,9 +1,9 @@
 FROM ubuntu:18.04
 
 # 使用 上海 时区
-RUN rm -f /etc/localtime \
-&& ln -sv /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-&& echo "Asia/Shanghai" > /etc/timezone
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 
 # 使用中文语言
 ENV LANG C.UTF-8
